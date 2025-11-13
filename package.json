@@ -25,14 +25,18 @@
     "postbuild": "npx react-snap"
   },
   "devDependencies": {
-    "react-snap": "^1.23.0",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "react-snap": "^1.23.0"
   },
   "reactSnap": {
-  "source": "build",
-  "include": ["/", "/shap/1", "/shap/2", "/shap/3"]
-}
-,
+    "source": "build",
+    "include": [
+      "/",
+      "/#/shap/1",
+      "/#/shap/2",
+      "/#/shap/3"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,27 +1,34 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const adsData = {
-  1: { title: "شقة 1 للبيع", image: "https://link-to-image1.jpg" },
-  2: { title: "شقة 2 للبيع", image: "https://link-to-image2.jpg" },
-  3: { title: "شقة 3 للبيع", image: "https://link-to-image3.jpg" }
+const adData = {
+  1: { title: "شقة للبيع 1", description: "شقة رائعة في القاهرة", image: "https://via.placeholder.com/600x400?text=Ad+1" },
+  2: { title: "شقة للبيع 2", description: "شقة رائعة في الإسكندرية", image: "https://via.placeholder.com/600x400?text=Ad+2" },
+  3: { title: "شقة للبيع 3", description: "شقة رائعة في الجيزة", image: "https://via.placeholder.com/600x400?text=Ad+3" },
 };
 
-export default function AdPage() {
+function AdPage() {
   const { id } = useParams();
-  const ad = adsData[id];
+  const ad = adData[id] || { title: "شقة غير موجودة", description: "هذا الإعلان غير موجود", image: "https://via.placeholder.com/600x400?text=Not+Found" };
 
   return (
     <div>
       <Helmet>
-        <title>{ad?.title || "إعلان"}</title>
-        <meta property="og:title" content={ad?.title || "إعلان"} />
-        <meta property="og:image" content={ad?.image || ""} />
+        <title>{ad.title}</title>
+        <meta name="description" content={ad.description} />
+        {/* Open Graph */}
+        <meta property="og:title" content={ad.title} />
+        <meta property="og:description" content={ad.description} />
+        <meta property="og:image" content={ad.image} />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <h1>{ad?.title}</h1>
-      <img src={ad?.image} alt={ad?.title} />
+      <h1>{ad.title}</h1>
+      <p>{ad.description}</p>
+      <img src={ad.image} alt={ad.title} style={{ maxWidth: "100%" }} />
     </div>
   );
 }
+
+export default AdPage;
