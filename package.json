@@ -9,14 +9,27 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.30.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://adelsherif.github.io/testapp",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "include": [
+      "/shap/1",
+      "/shap/2",
+      "/shap/3"
+    ]
   },
   "eslintConfig": {
     "extends": [
