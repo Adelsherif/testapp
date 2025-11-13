@@ -10,7 +10,7 @@ function Home() {
         <meta name="description" content="صفحة الشقق المعروضة للبيع" />
         <meta property="og:title" content="الرئيسية - شقق للبيع" />
         <meta property="og:description" content="صفحة الشقق المعروضة للبيع" />
-        <meta property="og:image" content="https://via.placeholder.com/600x400?text=Home" />
+        <meta property="og:image" content="https://i.pinimg.com/736x/e2/92/d4/e292d40d8adedec48521b9602dc89734.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
 
