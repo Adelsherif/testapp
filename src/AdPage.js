@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const adData = {
-  1: { title: "شقة للبيع 1", description: "شقة رائعة في القاهرة", image: "https://via.placeholder.com/600x400?text=Ad+1" },
-  2: { title: "شقة للبيع 2", description: "شقة رائعة في الإسكندرية", image: "https://via.placeholder.com/600x400?text=Ad+2" },
-  3: { title: "شقة للبيع 3", description: "شقة رائعة في الجيزة", image: "https://via.placeholder.com/600x400?text=Ad+3" },
+  1: { title: "شقة للبيع 1", description: "شقة رائعة في القاهرة", image: "https://i.pinimg.com/736x/e2/92/d4/e292d40d8adedec48521b9602dc89734.jpg" },
+  2: { title: "شقة للبيع 2", description: "شقة رائعة في الإسكندرية", image: "https://i.pinimg.com/736x/e2/92/d4/e292d40d8adedec48521b9602dc89734.jpg" },
+  3: { title: "شقة للبيع 3", description: "شقة رائعة في الجيزة", image: "https://i.pinimg.com/736x/e2/92/d4/e292d40d8adedec48521b9602dc89734.jpg" },
 };
 
 function AdPage() {
