@@ -1,33 +1,27 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const ads = {
-  1: { title: "شقة 1", description: "شقة للبيع 1", image: "https://via.placeholder.com/300" },
-  2: { title: "شقة 2", description: "شقة للبيع 2", image: "https://via.placeholder.com/300" },
-  3: { title: "شقة 3", description: "شقة للبيع 3", image: "https://via.placeholder.com/300" },
+const adsData = {
+  1: { title: "شقة 1 للبيع", image: "https://link-to-image1.jpg" },
+  2: { title: "شقة 2 للبيع", image: "https://link-to-image2.jpg" },
+  3: { title: "شقة 3 للبيع", image: "https://link-to-image3.jpg" }
 };
 
-function AdPage() {
+export default function AdPage() {
   const { id } = useParams();
-  const ad = ads[id];
-
-  if (!ad) return <h2>الإعلان غير موجود</h2>;
+  const ad = adsData[id];
 
   return (
     <div>
       <Helmet>
-        <title>{ad.title}</title>
-        <meta property="og:title" content={ad.title} />
-        <meta property="og:description" content={ad.description} />
-        <meta property="og:image" content={ad.image} />
-        <meta property="og:url" content={`https://<username>.github.io/testapp/#/shap/${id}`} />
+        <title>{ad?.title || "إعلان"}</title>
+        <meta property="og:title" content={ad?.title || "إعلان"} />
+        <meta property="og:image" content={ad?.image || ""} />
+        <meta property="og:type" content="website" />
       </Helmet>
-      <h1>{ad.title}</h1>
-      <p>{ad.description}</p>
-      <img src={ad.image} alt={ad.title} />
+
+      <h1>{ad?.title}</h1>
+      <img src={ad?.image} alt={ad?.title} />
     </div>
   );
 }
-
-export default AdPage;

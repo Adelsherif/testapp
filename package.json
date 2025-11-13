@@ -21,16 +21,18 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "postbuild": "react-snap"
+    "deploy": "npx gh-pages -d build",
+    "postbuild": "npx react-snap"
+  },
+  "devDependencies": {
+    "react-snap": "^1.23.0",
+    "gh-pages": "^5.0.0"
   },
   "reactSnap": {
-    "include": [
-      "/shap/1",
-      "/shap/2",
-      "/shap/3"
-    ]
-  },
+  "source": "build",
+  "include": ["/", "/shap/1", "/shap/2", "/shap/3"]
+}
+,
   "eslintConfig": {
     "extends": [
       "react-app",
